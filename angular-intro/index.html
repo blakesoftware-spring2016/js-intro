@@ -2,10 +2,26 @@
 <html>
 <head>
   <title>Angular Intro</title>
+  <link rel="stylesheet" type="text/css" href="app.css">
 </head>
-<body>
+<!-- The ng-app attribute defines the part of our html
+     that angular has control over. In this case, we 
+     give angular control over the entire body of our page -->
+<body ng-app="IntroApp">
   <h1>Intro to Angular!</h1>
   
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+  <!-- We can use the ng-view attribute to define a container element
+       in which angular will swap our html pages in and out of.
+       In this case, we make a simple div. -->
+  <div ng-view></div>
+  
+  <!-- Load Angular! -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
+  
+  <!-- Load the Angular router so we can do URL stuff! -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.min.js"></script>
+  
+  <!-- Load our app code! -->
+  <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
