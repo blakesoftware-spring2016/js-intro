@@ -21,8 +21,9 @@ app.config(['$routeProvider', function($routeProvider) {  // RIDICULOUS SYNTAX!
   // Okay, now we can finally set up our URLs
   $routeProvider.
     when('/', {                                          // If we're at the root URL '/' (e.g., http://ourapp.com/ )
-      templateUrl: 'templates/home-template.html'        // then replace the contents of our ng-view tag in index.html 
+      templateUrl: 'templates/home-template.html',        // then replace the contents of our ng-view tag in index.html 
                                                          // with the html in templates/home-template.html
+      controller: "HomeController"
     }).
     when('/other-page', {                      
       templateUrl: 'templates/other-page-template.html'  // If we're at the otherPage URL (e.g., http://ourapp.com/other-page)
@@ -34,5 +35,14 @@ app.config(['$routeProvider', function($routeProvider) {  // RIDICULOUS SYNTAX!
     });
   
   
+  
+}]);
+
+app.controller("HomeController", ['$scope', '$location', function($scope, $location) {
+  
+  $scope.buttonClick = function() {
+    console.log('button click function is running!');
+    $location.path('/other-page');
+  };
   
 }]);
